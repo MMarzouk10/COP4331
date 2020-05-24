@@ -103,7 +103,7 @@
         table.rows[i].cells[6].onclick=function()
         {
                 index= this.parentElement.rowIndex;
-                for (var x=0; x<6; x++)
+                for (var x=0; x<5; x++)
                 {
                     var prev = (document.getElementById('table').rows[index].cells[x].innerText);
                 document.getElementById('table').rows[index].cells[x].innerHTML = "<div contenteditable>"+ prev+"</div>";
