@@ -1,0 +1,288 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>COP 4331</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+    </head>
+    <body>
+        <div id="firstBox">
+            <header id="topHeader">
+                
+            </header>
+            <nav id="topMenu">
+                <ul>
+                    <li><a id="ult">ULTRA</a><a id="cont"> CONTACTS</a>  </li>
+                    <li><button class="AddBtn" onclick="AddRow()"><i class="fa fa-plus"></i></button>   </li>
+                    <li><button class="SearchBtn" onclick="DefaultFunction()"><i class="fa fa-search"></i></button> </li>
+                    <li><button class="LogOut"><i class="fa fa-sign-out"></i></button>         </li>
+                    
+                </ul>
+            </nav>
+        </div>
+        <br>
+        <div id="bigBox">
+            <br> <br> <br>
+            <h4>Welcome User</h4>
+            <h1>______________________________</h1><br>
+            <div id=bodyBox>
+                <section id="mainSection">                   
+                    <article>
+                        <h4>ULTRA CONTACTS </h4><br><br>
+                        <input type="text" id="searchbar" class="searchbar" onkeypress="handle(event)" placeholder="Type name and click enter to search..."><br><br><br><br>
+                         <a name="1" id="n1"></a>
+                         <table id='table' style="width:100%">
+                            <tr >
+                            <body onload="DefaultFunction()"></body>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Age</th>
+                              <th>Email</th>
+                              <th>Phone</th>
+                              <th>Date Created</th>
+                              <th>Edit</th>
+                              <th>Delete</th>
+                            </tr>
+
+
+                          </table>
+                         <br><br><br>
+                         
+                         <button class="Save" id = "SaveButton" onclick="SaveConfirmation()" style="visibility: hidden;">Save<br><i class="fa fa-save"></i></button>
+                         
+                        <script>
+                            function handle(e){
+	                            var address=document.getElementById("searchbar").value;
+                                    if(e.keyCode === 13)
+                                    {
+    	                            alert("You are searching: " + address);
+                                    }
+	                                return false;
+}
+                        </script>
+
+                        <script>
+                            function DeleteContact() {
+                            var index, table = document.getElementById('table');
+                            for(var i=1; i<table.rows.length;i++)
+                            {
+                                table.rows[i].cells[7].onclick=function()
+                                {
+                                    var conf = confirm("Are you sure you want to delete?");
+                                    
+                                    if(conf == true)
+                                    {
+                                    
+                                    index= this.parentElement.rowIndex;
+                                    table.deleteRow(index);
+                                    }
+                                   
+                                };
+                            }
+                            };
+                        </script>
+
+<script>
+
+    function UpdateConfirmation()
+     {
+        alert("UPDATED!");
+     }
+
+     </script>
+
+
+<script>
+    function EditContact() {
+    var index, table = document.getElementById('table');
+    for(var i=1; i<table.rows.length;i++)
+    {
+        table.rows[i].cells[6].onclick=function()
+        {
+                index= this.parentElement.rowIndex;
+                for (var x=0; x<6; x++)
+                {
+                    var prev = (document.getElementById('table').rows[index].cells[x].innerText);
+                document.getElementById('table').rows[index].cells[x].innerHTML = "<div contenteditable>"+ prev+"</div>";
+                }
+
+                alert("Row " + index +" now available for editing.");
+            
+            for (var dlt=0; dlt<table.rows.length; dlt++)
+            {
+                table.rows[dlt].deleteCell(7);
+                table.rows[dlt].deleteCell(6);
+                
+            }
+            var Upd = table.rows[index].insertCell(6);
+            Upd.innerHTML = '<button class="UpdateBtn" id = "UpdateButton" onclick="UpdateConfirmation()" ">Update<br><i class="fa fa-save"></i></button>';
+            var search = document.getElementById("searchbar");
+            search.style.visibility="hidden";
+            var save = document.getElementById("SaveButton");
+            save.style.visibility="hidden";
+            
+           
+        };
+    }
+    };
+</script>
+                        
+
+                        
+                        <script>
+
+function AddRow() {
+    var save = document.getElementById("SaveButton");
+save.style.visibility="visible";
+  var table = document.getElementById('table');
+  while (table.rows.length > 1) 
+  {
+  table.deleteRow(1);
+}
+  var row = table.insertRow(1);
+  var cell1 = row.insertCell(0);
+var txtBox1 = document.createElement("input");
+txtBox1.type = "text";
+txtBox1.name = "FN";
+txtBox1.id = "FirstName";
+//txtBox1.placeholder ("First Name...");
+cell1.appendChild(txtBox1);
+
+var cell2 = row.insertCell(1);
+var txtBox2 = document.createElement("input");
+txtBox2.type = "text";
+txtBox2.name = "LN";
+txtBox2.id = "LastName";
+//txtBox2.placeholder ("Last Name...");
+cell2.appendChild(txtBox2);
+
+var cell3 = row.insertCell(2);
+var txtBox3 = document.createElement("input");
+txtBox3.type = "number";
+txtBox3.name = "Age";
+txtBox3.id = "Age";
+//txtBox3.placeholder ("Age...");
+cell3.appendChild(txtBox3);
+
+var cell4 = row.insertCell(3);
+var txtBox4 = document.createElement("input");
+txtBox4.type = "email";
+txtBox4.name = "Email";
+txtBox4.id = "Email";
+//txtBox4.placeholder ("Email...");
+cell4.appendChild(txtBox4);
+
+var cell5 = row.insertCell(4);
+var txtBox5 = document.createElement("input");
+txtBox5.type = "text";
+txtBox5.name = "Phone";
+txtBox5.id = "Phone";
+//txtBox5.placeholder ("Phone...");
+cell5.appendChild(txtBox5);
+
+var cell6 = row.insertCell(5);
+const monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+    let dateObj = new Date();
+    let month = monthNames[dateObj.getMonth()];
+    let day = String(dateObj.getDate()).padStart(2, '0');
+    let year = dateObj.getFullYear();
+    let output = month  + '\n'+ day  + ', ' + year;
+cell6.innerHTML = output;
+var firstRow = document.getElementById('table').rows[0];
+for(var z=2; z>0; z--)
+{
+firstRow.deleteCell(6);
+
+}
+
+var search = document.getElementById("searchbar");
+search.style.visibility="hidden";
+
+
+
+};
+                        </script>
+
+
+<script>
+
+    function SaveConfirmation()
+     {
+        alert("SAVED!");
+     }
+
+     </script>
+
+                        <script>
+ function DefaultFunction()
+  {
+    document.getElementById("searchbar").value="";                      
+  var table = document.getElementById('table');
+  while (table.rows.length > 1) 
+  {
+  table.deleteRow(1);
+}
+
+  
+var firstRow = document.getElementById('table').rows[0];
+if(document.getElementById('table').rows[0].cells.length<7)
+{
+    
+var cell7= firstRow.insertCell(6);
+var cell8=firstRow.insertCell(7);
+cell7.innerHTML = "Edit";
+cell7.style.fontWeight='bold';
+cell8.innerHTML = "Delete";
+cell8.style.fontWeight='bold';
+}
+//while data doesnt reach max insert row 
+var amt=0;
+while (amt !=2)
+{
+var row = table.insertRow(1);
+
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = '<button class="Delete" onclick="DeleteContact()"><i class="fa fa-trash"></i></button>';
+    var cell2 = row.insertCell(0);
+    cell2.innerHTML = '<button class="Edit" onclick="EditContact()"><i class="fa fa-edit"></i></button>';
+  
+  for(var rows=6; rows>0; rows--)
+  {
+    var cell1 = row.insertCell(0);
+    cell1.innerHTML = ("Test Data "+rows+ " "+amt);
+  }
+  amt++;
+}
+var search = document.getElementById("searchbar");
+search.style.visibility = "visible";
+var save = document.getElementById("SaveButton");
+save.style.visibility="hidden";
+
+
+};
+                        
+                        </script>
+                       
+                     
+                    <h1>________________________</h1><br><br><br><br>
+                    
+                        
+                        
+                    
+                        
+                            
+                         
+                        
+                </section>
+                
+            </div>
+            
+        </div>
+
+        
+  
+</html>
