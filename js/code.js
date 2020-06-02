@@ -473,7 +473,7 @@ function DefaultFunction()
             }
         else
         {
-         //alert ("Fill all fields prior to saving.");
+         alert ("Fill all fields prior to saving.");
         }
     }
 
@@ -628,7 +628,7 @@ function AddRow() {
      }
     else
      {
-         //alert ("Fill all fields prior to saving.");
+         alert ("Fill all fields prior to saving.");
      }
 
 }
