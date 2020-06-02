@@ -1,0 +1,229 @@
+*{  /* Some elements have default margin/padding - layout issues if not reset */
+    margin: 0;
+    padding: 0;
+}
+h1{
+    font: bold 30px sans-serif;
+    color: rgba(52, 94, 231, 0.8);
+    text-align: center;
+    margin: auto;
+}
+h2{
+    font:  20px sans-serif;
+    color: whitesmoke;
+}
+h3{
+    font:  15px sans-serif;
+    color: rgba(96, 117, 190, 0.5);
+}
+h4{
+    font: bold 30px sans-serif;
+    color: whitesmoke;
+    text-align: center;
+    margin: auto;
+}
+article{
+    font:  17px sans-serif;
+    color: whitesmoke; 
+    text-align: justify;
+}
+.Delete {
+    background-color: rgb(179, 31, 5); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 8px 12px; /* Some padding */
+    font-size: 12px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .Edit:hover {
+    background-color: violet;
+  }
+  .searchbar {
+        width: 300px;
+        height: 30px;
+        font-size: 10pt;
+        background-color: rgb(255, 255, 255);
+        background-position: 15px 15px;
+        background-repeat: no-repeat;
+        padding-left: 40px;
+      
+  }
+  .Edit {
+    background-color: rgb(20, 50, 187); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 8px 12px; /* Some padding */
+    font-size: 12px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .Delete:hover {
+    background-color: violet;
+  }
+
+
+  .Save {
+    background-color: rgb(166, 218, 161); /* Blue background */
+    border: none; /* Remove borders */
+    color: rgb(0, 2, 1); /* White text */
+    padding: 16px 20px; /* Some padding */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    text-align: center;
+    
+  }
+  
+  /* Darker background on mouse-over */
+  .Save:hover {
+    background-color: violet;
+  }
+  .AddBtn {
+    background-color: rgb(59, 216, 44); /* Blue background */
+    border: none; /* Remove borders */
+    color: rgb(0, 2, 1); /* White text */
+    padding: 16px 20px; /* Some padding */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 12px;
+  }
+  
+  /* Darker background on mouse-over */
+  .AddBtn:hover {
+    background-color: violet;
+  }
+
+  .UpdateBtn {
+    background-color: rgb(156, 1, 143); /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 8px 12px; /* Some padding */
+    font-size: 12px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+  }
+  
+  /* Darker background on mouse-over */
+  .UpdateBtn:hover {
+    background-color: violet;
+  }
+
+
+  .SearchBtn {
+    background-color: rgb(219, 174, 91); /* Blue background */
+    border: none; /* Remove borders */
+    color: rgb(0, 2, 1); /* White text */
+    padding: 16px 20px; /* Some padding */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 12px;
+  }
+  
+  /* Darker background on mouse-over */
+  .SearchBtn:hover {
+    background-color: violet;
+  }
+  .LogOut {
+    background-color: rgb(160, 39, 39); /* Blue background */
+    border: none; /* Remove borders */
+    color: rgb(0, 2, 1); /* White text */
+    padding: 16px 20px; /* Some padding */
+    font-size: 20px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+    border-radius: 12px;
+  }
+  
+  /* Darker background on mouse-over */
+  .LogOut:hover {
+    background-color: violet;
+  }
+a{
+    color: whitesmoke;
+}
+mark {
+    color: whitesmoke;
+    background-color: rgba(96, 117, 190, 0.5);
+  }
+a:hover{
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(168, 28, 196);
+}
+header{
+    text-align: center;
+    font-size: 25;
+    text-decoration: underline;
+}
+header, section, footer, aside, nav, article, hgroup{
+    display: block;
+}
+body{
+    text-align: justify;
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-pack: center;
+    background-image: linear-gradient(to top, rgb(168, 28, 196),whitesmoke);
+}
+/* FIRST BOX with logo/MENU*/
+#firstBox{
+    text-align: left;
+    width:100%;
+    background-color: rgba(10, 10, 10, 0.7);
+    z-index: 9999;
+    position: fixed;
+}
+#topHeader{ /* LOGO and Header of the website */
+    padding: 10px; /* inside space */
+    display: inline-block;
+    margin-left: 50px;
+}
+
+#topMenu li #ult{
+    color: rgb(168, 28, 196);
+    font-size: 24px;
+}
+#topMenu li #cont{
+    color: whitesmoke;
+    font-size: 24px;
+}
+#topMenu{
+    display: inline-block;
+    vertical-align: middle;
+}
+#topMenu li{
+    text-transform: uppercase;
+    display: inline-block;
+    padding: 10px;
+    font:  17px sans-serif;
+    vertical-align: middle;
+    margin-left: 70px;
+    margin-right:center;
+}
+
+/* BIG BOX*/
+#bigBox{
+    background: rgba(10, 10, 10, 0.7);;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-flex: 1;
+    max-width: 1000px;
+    margin: 90px 0; /* outside space   -  Top Left Right Bottom ...auto centers it on 3 positions LRB*/
+}
+
+#mainSection{
+    -webkit-box-flex: 1;
+    margin: 20px 0;
+    padding: 20px;
+}
+
+article{
+    padding: 10px;
+    margin: 5px;
+    text-align: center;
+}
+
+#loginDiv{
+    color: white;
+    text-align: center;
+}

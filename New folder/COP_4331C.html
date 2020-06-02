@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>COP 4331</title>
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="js/code.js"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script type="text/javascript">
+    	    document.addEventListener('DOMContentLoaded', function() {
+    		    readCookie();
+    	        }, false);
+    	</script>
+        
+    </head>
+    <body onload="DefaultFunction()">
+        <div id="firstBox">
+            <header id="topHeader">
+            </header>
+            <nav id="topMenu">
+                <ul>
+                    <li><a id="ult">ULTRA</a><a id="cont"> CONTACTS</a>  </li>
+                    <li><button class="AddBtn" onclick="AddRow()"><i class="fa fa-plus"></i></button>   </li>
+                    <li><button class="SearchBtn" onclick="DefaultFunction()"><i class="fa fa-search"></i></button> </li>
+                    <li><button class="LogOut" onclick="doLogout()"><i class="fa fa-sign-out"></i></button>         </li>
+                </ul>
+            </nav>
+        </div>
+        <br>
+        <div id="bigBox">
+            <br> <br> <br>
+            <h4 id="userName">Welcome User</h4>
+            <h1>______________________________</h1><br>
+            <div id=bodyBox>
+                <section id="mainSection">                   
+                    <article>
+                        <h4>ULTRA CONTACTS </h4><br><br>
+                        <input type="text" id="searchbar" class="searchbar" onkeypress="handle(event)" placeholder="Type name and click enter to search..."><br><br><br><br>
+                         <a name="1" id="n1"></a>
+                         <table id='table' style="width:100%">
+                             <tbody >
+                            <tr >
+                              <th>ID</th>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Email</th>
+                              <th>Phone</th>
+                              <th>Date Created</th>
+                              <th>Edit</th>
+                              <th>Delete</th>
+                            </tr>
+                            </tbody>
+                          </table>
+                         <br><br><br>
+                         <button class="Save" id = "SaveButton" onclick="SaveConfirmation()" style="visibility: hidden;">Save<br><i class="fa fa-save"></i></button>
+                    </article>
+                    <h1>________________________</h1><br><br><br><br>
+                </section>
+            </div>
+        </div>
+
+        
+    </body>
+</html>
+
